@@ -69,22 +69,29 @@ public class Rational
     // Returns whether or not the Rational is currently simplified
     // or not
     public boolean isSimplified() { 
-        return false; // YOUR CODE HERE
+        int a = this.numerator;
+        int b = this.denominator;
+        int gcd = greatestCommonFactor(a, b);
+        return (gcd == 1);
     }
 
     // Calculates the double value of our Rational
     public double calculateDecimalValue() { 
-        return 0.0; // YOUR CODE HERE
+        double value = ((double) this.numerator / this.denominator);
+        return value;
     }
 
     // Returns the Rational we get from raising  the rational number to an integer power
     public Rational pow(int exponent) {
-        return null; // YOUR CODE HERE
+        int newNum = (int) (Math.pow(this.numerator, exponent));
+        int newDen = (int) (Math.pow(this.denominator, exponent));
+        Rational newRational = new Rational(newNum, newDen);
+        return newRational;
     }
 
     // Checks to see if either the numerator or denominator match a given number
     public boolean matches(int x) {
-        return false; // YOUR CODE HERE
+        return (this.numerator == x || this.denominator == x);
     }
 
 
